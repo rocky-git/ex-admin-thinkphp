@@ -40,7 +40,7 @@ class InstallCommand extends Command
         unlink($path);
         plugin()->buildIde();
         plugin()->thinkphp->install();
-        Console::call('plugin:composer',['thinkphp']);
+        $output->writeln(Console::call('plugin:composer',['thinkphp'])->fetch());
         // 指令输出
         $output->writeln('install success');
     }
