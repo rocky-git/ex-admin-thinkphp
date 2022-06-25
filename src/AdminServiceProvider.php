@@ -2,10 +2,11 @@
 
 namespace ExAdmin\thinkphp;
 
-
-
 use ExAdmin\thinkphp\command\InstallCommand;
+use ExAdmin\thinkphp\command\MigrateRollback;
+use ExAdmin\thinkphp\command\MigrateRun;
 use ExAdmin\thinkphp\command\PluginComposerCommand;
+use ExAdmin\thinkphp\command\SeedRun;
 use ExAdmin\ui\support\Container;
 use think\Service;
 

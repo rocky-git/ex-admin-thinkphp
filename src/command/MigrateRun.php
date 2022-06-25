@@ -5,7 +5,7 @@
  * Date: 2022-06-21
  * Time: 17:55
  */
-namespace ExAdmin\thinkphp;
+namespace ExAdmin\thinkphp\command;
 
 use Symfony\Component\Console\Input\InputOption;
 use think\migration\command\migrate\Run;

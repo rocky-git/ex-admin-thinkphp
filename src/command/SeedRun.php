@@ -6,7 +6,7 @@
  * Time: 18:07
  */
 
-namespace ExAdmin\thinkphp;
+namespace ExAdmin\thinkphp\command;
 
 
 use Symfony\Component\Console\Input\InputOption;
