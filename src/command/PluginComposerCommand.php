@@ -17,7 +17,7 @@ class PluginComposerCommand extends Command
         // 指令配置
         $this->setName('plugin:composer')
             ->setDescription('Install the plugin package');
-        $this->addArgument('name',Argument::REQUIRED,'plugin name');
+        $this->addArgument('name',Argument::OPTIONAL,'plugin name');
     }
 
     protected function execute(Input $input, Output $output)
