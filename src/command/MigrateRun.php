@@ -34,6 +34,11 @@ EOT
     }
     protected function getPath()
     {
-        return plugin()->thinkphp->getPath() .DIRECTORY_SEPARATOR. 'database' . DIRECTORY_SEPARATOR . 'migrations';
+        if($this->input->getOption('path')){
+            return $this->input->getOption('path');
+        }else{
+            return plugin()->thinkphp->getPath() .DIRECTORY_SEPARATOR. 'database' . DIRECTORY_SEPARATOR . 'migrations';
+        }
+        
     }
 }
