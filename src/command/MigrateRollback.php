@@ -18,6 +18,7 @@ class MigrateRollback extends Rollback
     {
         $this->setName('admin:migrate:rollback')
             ->setDescription('Rollback the last or to a specific migration')
+            ->addOption('--path', null, InputOption::VALUE_REQUIRED, 'path')
             ->addOption('--target', '-t', InputOption::VALUE_REQUIRED, 'The version number to rollback to')
             ->addOption('--date', '-d', InputOption::VALUE_REQUIRED, 'The date to rollback to')
             ->addOption('--force', '-f', InputOption::VALUE_NONE, 'Force rollback to ignore breakpoints')
@@ -34,7 +35,7 @@ EOT
     }
     protected function getPath()
     {
-        if($this->input->getOption('path')){
+        if($this->input->hasOption('path')){
             return $this->input->getOption('path');
         }else{
             return plugin()->thinkphp->getPath() .DIRECTORY_SEPARATOR. 'database' . DIRECTORY_SEPARATOR . 'migrations';

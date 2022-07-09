@@ -19,6 +19,7 @@ class MigrateRun extends Run
     {
         $this->setName('admin:migrate:run')
             ->setDescription('Migrate the database')
+            ->addOption('--path', null, InputOption::VALUE_REQUIRED, 'path')
             ->addOption('--target', '-t', InputOption::VALUE_REQUIRED, 'The version number to migrate to')
             ->addOption('--date', '-d', InputOption::VALUE_REQUIRED, 'The date to migrate to')
             ->setHelp(<<<EOT
@@ -34,7 +35,7 @@ EOT
     }
     protected function getPath()
     {
-        if($this->input->getOption('path')){
+        if($this->input->hasOption('path')){
             return $this->input->getOption('path');
         }else{
             return plugin()->thinkphp->getPath() .DIRECTORY_SEPARATOR. 'database' . DIRECTORY_SEPARATOR . 'migrations';

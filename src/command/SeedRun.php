@@ -19,6 +19,7 @@ class SeedRun extends Run
 
         $this->setName('admin:seed:run')
             ->setDescription('Run database seeders')
+            ->addOption('--path', null, InputOption::VALUE_REQUIRED, 'path')
             ->addOption('--seed', '-s', InputOption::VALUE_REQUIRED, 'What is the name of the seeder?')
             ->setHelp(<<<EOT
                 The <info>seed:run</info> command runs all available or individual seeders
@@ -32,7 +33,7 @@ EOT
     }
     protected function getPath()
     {
-        if($this->input->getOption('path')){
+        if($this->input->hasOption('path')){
             return $this->input->getOption('path');
         }else{
             return plugin()->thinkphp->getPath() .DIRECTORY_SEPARATOR. 'database' . DIRECTORY_SEPARATOR . 'seeds';
