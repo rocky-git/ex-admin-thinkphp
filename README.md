@@ -9,6 +9,8 @@
 - [Demo / 在线演示](https://demo.ex-admin.com)
 - [github](https://github.com/rocky-git/ex-admin-thinkphp)
 - [gitee(码云)](https://gitee.com/rocky-git/ex-admin-thinkphp)
+- [ex-admin-ui(github)](https://github.com/rocky-git/ex-admin-ui)
+- [ex-admin-ui(码云)](https://gitee.com/rocky-git/ex-admin-ui)
 
 
 
@@ -55,7 +57,7 @@ composer require rockys/ex-admin-thinkphp
 
 然后运行下面的命令完成安装：
 ```
-php artisan admin:install
+php think admin:install
 ```
 
 启动服务后，在浏览器打开 http://localhost/admin，使用用户名 admin 和密码 admin 登陆
