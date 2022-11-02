@@ -30,14 +30,14 @@ class InstallCommand extends Command
 
 
         $filesystem = new Filesystem;
-        $filesystem->mirror(__DIR__ . '/../../../ex-admin-ui/resources',public_path('ex-admin'),null,['override'=>$input->hasOption('force')]);
+        $filesystem->mirror(__DIR__ . '/../../../ex-admin-ui/resources',public_path('exadmin'),null,['override'=>$input->getOption('force')]);
        
         $path = plugin()->download('thinkphp',$input->getOption('versions'));
         if ($path === false) {
             $this->output->warning('下载插件失败');
             return 0;
         }
-        $result = plugin()->install($path,$input->hasOption('force'));
+        $result = plugin()->install($path,$input->getOption('force'));
         if ($result !== true) {
             $this->output->warning($result);
             return 0;
