@@ -7,6 +7,7 @@ use ExAdmin\thinkphp\command\MigrateRollback;
 use ExAdmin\thinkphp\command\MigrateRun;
 use ExAdmin\thinkphp\command\PluginComposerCommand;
 use ExAdmin\thinkphp\command\SeedRun;
+use ExAdmin\thinkphp\exception\Error;
 use ExAdmin\ui\support\Container;
 use Symfony\Component\Filesystem\Filesystem;
 use think\Service;
@@ -21,7 +22,7 @@ class AdminServiceProvider extends Service
      */
     public function boot()
     {
-
+        set_error_handler([$this->app->make(Error::class), 'appError']);
         Container::getInstance()->plugin->register();
         $this->updateVersion();
     }
