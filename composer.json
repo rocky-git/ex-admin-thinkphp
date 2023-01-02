@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": ">=7.3.0",
-        "rockys/ex-admin-ui": ">=1.1.4",
+        "rockys/ex-admin-ui": "^1",
         "topthink/think-migration": "^3",
         "topthink/think-queue": "^3"
     },
